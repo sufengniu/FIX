@@ -1,0 +1,3 @@
+G:/synopsys/fpga_E2010091/bin/synplify_pro.exe TAGtranslation.prj -tcl TAGtranslation_map.tcl 
+G:/synopsys/fpga_E2010091/bin/synplify_pro.exe -tcl I:/testing/FIX/devl/projnav/FIX/TAGtranslation_open_file.tcl 
+G:/synopsys/fpga_E2010091/bin/synplify_pro.exe -tcl I:/testing/FIX/devl/projnav/FIX/TAGtranslation_open_file.tcl 

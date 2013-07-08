@@ -39,28 +39,7 @@ package FIX_pkg is
 	type din_t is array (VECTOR_LENGTH-1 downto 0) of std_logic_vector(WIDTH_IN-1 downto 0);
 	type dout_t is array (VECTOR_LENGTH-1 downto 0) of std_logic_vector(WIDTH_OUT-1 downto 0);
 	
-	-- hardware implementation
-	type ASCIITableType is array (0 to ASCII_LENGTH-1) of string;
-	constant ASCII: ASCIITableType := ( "sp", "!", "", "#", "$", "%", "&", "'",
-													"(", ")", "*", "+", ",", "-", ".", "/",
-													"0", "1", "2", "3", "4", "5", "6", "7",
-													"8", "9", ":", ";", "<", "=", ">", "?",
-													"@", "A", "B", "C", "D", "E", "F", "G",
-													"H", "I", "J", "K", "L", "M", "N", "O",
-													"P", "Q", "R", "S", "T", "U", "V", "W",
-													"X", "Y", "Z", "[", "\", "]", "^", "_",
-													"`", "a", "b", "c", "d", "e", "f", "g",
-													"h", "i", "j", "k", "l", "m", "n", "o",
-													"p", "q", "r", "s", "t", "u", "v", "w",
-													"x", "y", "z", "{", "|", "}", "~");
-	
 	-- FIX partten defined below:
-	
-	type FIXTableType is array (0 to 9) of std_logic_vector(7 downto 0);
-	-- FIX tag number
-	constant FIXTag: FIXTagType := (	x"30", x"31", x"32", x"33", 
-												x"34", x"35", x"36", x"37",
-												x"38", x"39");
 	type FIXSelType is array (0 to 25) of std_logic_vector(7 downto 0);
 	-- FIX alphabet
 	constant FIXSelPattern: FIXSelType := (	x"41", x"42", x"43", x"44",

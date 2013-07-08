@@ -1,0 +1,16 @@
+Synopsys Xilinx Technology Constraint Extraction, Version maprc, Build 142R, Built Aug 23 2010 16:39:46
+Copyright (C) 1994-2010, Synopsys Inc.  All Rights Reserved
+Product Version E-2010.09-1
+Reading constraint file: I:\testing\FIX\devl\projnav\FIX\TAGtranslation.sdc
+@N: MF249 |Running in 32-bit mode.
+@N: MF257 |Gated clock conversion enabled 
+Reading Xilinx I/O pad type table from file <G:\synopsys\fpga_E2010091\lib\xilinx\x_io_tbl.txt> 
+Reading Xilinx Rocket I/O parameter type table from file <G:\synopsys\fpga_E2010091\lib\xilinx\gttype.txt> 
+Finished Timing Extraction Phase. (Time elapsed 0h:00m:00s; Memory used current: 73MB peak: 115MB)
+
+@N: BN225 |Writing default property annotation file I:\testing\FIX\devl\projnav\FIX\TAGtranslation.sap.
+Timing Extraction successful!
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sun Jul 07 17:19:26 2013
+
+###########################################################]

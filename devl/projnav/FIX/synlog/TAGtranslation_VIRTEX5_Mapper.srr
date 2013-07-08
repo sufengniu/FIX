@@ -1,0 +1,214 @@
+Synopsys Xilinx Technology Mapper, Version maprc, Build 142R, Built Aug 23 2010 16:39:46
+Copyright (C) 1994-2010, Synopsys Inc.  All Rights Reserved
+Product Version E-2010.09-1
+@N: MF249 |Running in 32-bit mode.
+@N: MF257 |Gated clock conversion enabled 
+Reading Xilinx I/O pad type table from file <G:\synopsys\fpga_E2010091\lib\xilinx\x_io_tbl.txt> 
+Reading Xilinx Rocket I/O parameter type table from file <G:\synopsys\fpga_E2010091\lib\xilinx\gttype.txt> 
+
+
+Available hyper_sources - for debug and ip models
+	None Found
+
+@N: MT206 |Autoconstrain Mode is ON
+Finished RTL optimizations (Time elapsed 0h:00m:00s; Memory used current: 73MB peak: 115MB)
+
+Finished factoring (Time elapsed 0h:00m:00s; Memory used current: 73MB peak: 115MB)
+
+
+
+#################### START OF GENERATED CLOCK OPTIMIZATION REPORT ####################[
+
+======================================================================================
+                                Instance:Pin        Generated Clock Optimization Status
+======================================================================================
+
+
+##################### END OF GENERATED CLOCK OPTIMIZATION REPORT #####################]
+
+Finished gated-clock and generated-clock conversion (Time elapsed 0h:00m:00s; Memory used current: 73MB peak: 115MB)
+
+
+Clock Buffers:
+  Inserting Clock buffer for port clk,
+Finished generic timing optimizations - Pass 1 (Time elapsed 0h:00m:00s; Memory used current: 73MB peak: 115MB)
+
+Starting Early Timing Optimization (Time elapsed 0h:00m:00s; Memory used current: 74MB peak: 115MB)
+
+Finished Early Timing Optimization (Time elapsed 0h:00m:00s; Memory used current: 74MB peak: 115MB)
+
+Finished generic timing optimizations - Pass 2 (Time elapsed 0h:00m:00s; Memory used current: 74MB peak: 115MB)
+
+Finished preparing to map (Time elapsed 0h:00m:00s; Memory used current: 74MB peak: 115MB)
+
+Finished technology mapping (Time elapsed 0h:00m:00s; Memory used current: 73MB peak: 115MB)
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:00s		    -0.35ns		  53 /        92
+   2		0h:00m:00s		    -0.35ns		  53 /        92
+------------------------------------------------------------
+
+@N: FX271 :"i:\testing\fix\hdl\translation.vhd":63:1:63:2|Instance "buff_2[2]" with 7 loads has been replicated 1 time(s) to improve timing 
+Timing driven replication report
+Added 1 Registers via timing driven replication
+Added 1 LUTs via timing driven replication
+
+
+
+@N: FX271 :"i:\testing\fix\hdl\translation.vhd":63:1:63:2|Instance "buff_2[3]" with 7 loads has been replicated 1 time(s) to improve timing 
+@N: FX271 :"i:\testing\fix\hdl\translation.vhd":63:1:63:2|Instance "buff_2[1]" with 6 loads has been replicated 1 time(s) to improve timing 
+@N: FX271 :"i:\testing\fix\hdl\translation.vhd":63:1:63:2|Instance "buff_2[4]" with 4 loads has been replicated 1 time(s) to improve timing 
+@N: FX271 :"i:\testing\fix\hdl\translation.vhd":63:1:63:2|Instance "buff_2[5]" with 4 loads has been replicated 1 time(s) to improve timing 
+@N: FX271 :"i:\testing\fix\hdl\translation.vhd":63:1:63:2|Instance "buff_2[0]" with 5 loads has been replicated 1 time(s) to improve timing 
+Timing driven replication report
+Added 5 Registers via timing driven replication
+Added 4 LUTs via timing driven replication
+
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:00s		    -0.55ns		  58 /        98
+
+   2		0h:00m:00s		    -0.55ns		  58 /        98
+   3		0h:00m:00s		    -0.55ns		  58 /        98
+   4		0h:00m:00s		    -0.55ns		  58 /        98
+------------------------------------------------------------
+
+
+
+Pass		 CPU time		Worst Slack		Luts / Registers
+------------------------------------------------------------
+   1		0h:00m:00s		    -0.55ns		  58 /        98
+
+   2		0h:00m:00s		    -0.55ns		  58 /        98
+   3		0h:00m:00s		    -0.55ns		  58 /        98
+   4		0h:00m:00s		    -0.55ns		  58 /        98
+------------------------------------------------------------
+
+Finished technology timing optimizations and critical path resynthesis (Time elapsed 0h:00m:00s; Memory used current: 74MB peak: 115MB)
+
+@N: FX164 |The option to pack flops in the IOB has not been specified 
+Finished restoring hierarchy (Time elapsed 0h:00m:00s; Memory used current: 74MB peak: 115MB)
+
+Writing Analyst data base I:\testing\FIX\devl\projnav\FIX\TAGtranslation.srm
+Finished Writing Netlist Databases (Time elapsed 0h:00m:00s; Memory used current: 74MB peak: 115MB)
+
+Writing EDIF Netlist and constraint files
+E-2010.09-1
+Finished Writing EDIF Netlist and constraint files (Time elapsed 0h:00m:01s; Memory used current: 74MB peak: 115MB)
+
+Starting Writing Gated Clock Conversion Report (Time elapsed 0h:00m:01s; Memory used current: 74MB peak: 115MB)
+
+@N: MF276 |Gated clock conversion enabled, but no gated clocks found in design 
+Finished Writing Gated Clock Conversion Report (Time elapsed 0h:00m:01s; Memory used current: 74MB peak: 115MB)
+
+Starting Writing Generated Clock Conversion Report (Time elapsed 0h:00m:01s; Memory used current: 74MB peak: 115MB)
+
+@N: MF333 |Generated clock conversion enabled, but no generated clocks found in design 
+Finished Writing Generated Clock Conversion Report (Time elapsed 0h:00m:01s; Memory used current: 74MB peak: 115MB)
+
+@W: MT420 |Found inferred clock TAGtranslation|clk with period 1.55ns. A user-defined clock should be declared on object "p:clk"
+
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Sun Jul 07 17:19:28 2013
+#
+
+
+Top view:               TAGtranslation
+Requested Frequency:    644.7 MHz
+Wire load mode:         top
+Paths requested:        0
+Constraint File(s):    I:\testing\FIX\devl\projnav\FIX\TAGtranslation.sdc
+                       
+@N: MT320 |This timing report estimates place and route data. Please look at the place and route timing report for final timing..
+
+@N: MT322 |Clock constraints cover only FF-to-FF paths associated with the clock..
+
+
+
+Performance Summary 
+*******************
+
+
+Worst slack in design: -0.274
+
+                       Requested     Estimated     Requested     Estimated                Clock        Clock                
+Starting Clock         Frequency     Frequency     Period        Period        Slack      Type         Group                
+----------------------------------------------------------------------------------------------------------------------------
+TAGtranslation|clk     644.7 MHz     548.0 MHz     1.551         1.825         -0.274     inferred     Autoconstr_clkgroup_0
+============================================================================================================================
+
+
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                  |    rise  to  rise    |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+-------------------------------------------------------------------------------------------------------------------------------
+Starting            Ending              |  constraint  slack   |  constraint  slack  |  constraint  slack  |  constraint  slack
+-------------------------------------------------------------------------------------------------------------------------------
+TAGtranslation|clk  TAGtranslation|clk  |  1.551       -0.274  |  No paths    -      |  No paths    -      |  No paths    -    
+===============================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+		No IO constraint found 
+
+
+##### END OF TIMING REPORT #####]
+
+---------------------------------------
+Resource Usage Report for TAGtranslation 
+
+Mapping to part: xc5vfx130tff1738-2
+Cell usage:
+FDCE            98 uses
+GND             1 use
+MUXCY_L         13 uses
+XORCY           13 uses
+LUT1            4 uses
+LUT2            13 uses
+LUT3            15 uses
+LUT4            5 uses
+LUT5            9 uses
+LUT6            12 uses
+
+I/O ports: 37
+I/O primitives: 37
+IBUF           26 uses
+IBUFG          1 use
+OBUF           10 uses
+
+BUFG           1 use
+
+I/O Register bits:                  0
+Register bits not including I/Os:   98 (0%)
+
+Global Clock Buffers: 1 of 32 (3%)
+
+Total load per clock:
+   TAGtranslation|clk: 98
+
+Mapping Summary:
+Total  LUTs: 58 (0%)
+
+
+ Number of unique control sets:              1
+
+Mapper successful!
+Process took 0h:00m:01s realtime, 0h:00m:01s cputime
+# Sun Jul 07 17:19:28 2013
+
+###########################################################]

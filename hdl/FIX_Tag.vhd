@@ -32,38 +32,39 @@ use IEEE.NUMERIC_STD.ALL;
 --library work;
 --use work.FIX_pkg.all;
 
-entity TAGtranslation is
+entity FIX_Tag is
 	 Generic (
 				endian			: string := "big";
-				tag_bytes		: integer := 3);
+				tag_bytes		: integer := 4);
     Port (
 				clk				: in  STD_LOGIC;
 				rst				: in  STD_LOGIC;
 				ce					: in  STD_LOGIC;
 				data_in			: in  STD_LOGIC_VECTOR(tag_bytes*8-1 downto 0);
-				tag				: out	STD_LOGIC_VECTOR(9 downto 0));	-- tag number, we defined 1024 tage
-end TAGtranslation;
+				tag				: out	STD_LOGIC_VECTOR(tag_bytes+6 downto 0));	-- tag number, we defined 2048 tage
+end FIX_Tag;
 
-architecture Behavioral of TAGtranslation is
+architecture Behavioral of FIX_Tag is
 
 type SegmentType is array (0 to tag_bytes-1) of unsigned(7 downto 0);
 signal buff, segment: SegmentType := (others => (others => '0'));
 
-signal ten_2, ten_1, ten_0: unsigned(9 downto 0);
-signal tag_buff: std_logic_vector(9 downto 0);
+signal ten_3, ten_2, ten_1, ten_0: unsigned(tag_bytes+6 downto 0);
+signal tag_buff: std_logic_vector(tag_bytes+6 downto 0);
 signal zero_prefix: unsigned(1 downto 0);
 constant offset: unsigned(7 downto 0) := x"1E";	-- 30 in decimal, number = ascii - 30 
 
 begin
 
 process(clk, rst)
-type ZerosType is array (0 to tag_bytes-1) of unsigned(9 downto 0);
+type ZerosType is array (0 to tag_bytes-1) of unsigned(tag_bytes+6 downto 0);
 variable zeros_buff: ZerosType := (others => (others => '0'));
 begin
 	if rst = '1' then
 		segment	<= (others => (others => '0'));
 		buff		<= (others => (others => '0'));
 		zeros_buff	:= (others => (others => '0'));
+		ten_3		<= (others => '0');
 		ten_2		<= (others => '0');
 		ten_1		<= (others => '0');
 		ten_0		<= (others => '0');
@@ -77,11 +78,12 @@ begin
 				zeros_buff(i) := zero_prefix & buff(i);
 			end loop;
 			
+			ten_3 <= shift_left(zeros_buff(3), 10) - shift_left(zeros_buff(3), 4) - shift_left(zeros_buff(3), 3);	-- zeros_buff * 1000
 			ten_2 <= shift_left(zeros_buff(2), 2) + shift_left(zeros_buff(2), 5) + shift_left(zeros_buff(2), 6);	-- zeros_buff * 100
 			ten_1 <= shift_left(zeros_buff(1), 1) + shift_left(zeros_buff(1), 3);		-- zeros_buff * 10
 			ten_0 <= zeros_buff(0);
 			
-			tag_buff <= std_logic_vector(ten_2 + ten_1 + ten_0);
+			tag_buff <= std_logic_vector(ten_3 + ten_2 + ten_1 + ten_0);
 			tag <= tag_buff;
 		end if;
 	end if;

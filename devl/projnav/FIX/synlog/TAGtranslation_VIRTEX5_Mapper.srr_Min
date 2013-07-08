@@ -1,0 +1,55 @@
+
+
+##### START OF TIMING REPORT #####[
+# Timing Report written on Sun Jul 07 17:19:28 2013
+#
+
+
+Top view:               TAGtranslation
+Requested Frequency:    644.7 MHz
+Wire load mode:         top
+Paths requested:        0
+Constraint File(s):    I:\testing\FIX\devl\projnav\FIX\TAGtranslation.sdc
+                       
+@N: MT320 |This timing report estimates place and route data. Please look at the place and route timing report for final timing..
+
+@N: MT322 |Clock constraints cover only FF-to-FF paths associated with the clock..
+
+
+
+Performance Summary 
+*******************
+
+
+Worst slack in design: 0.492
+
+                       Requested     Estimated     Requested     Estimated                Clock        Clock                
+Starting Clock         Frequency     Frequency     Period        Period        Slack      Type         Group                
+----------------------------------------------------------------------------------------------------------------------------
+TAGtranslation|clk     644.7 MHz     548.0 MHz     1.551         1.825         -0.274     inferred     Autoconstr_clkgroup_0
+============================================================================================================================
+
+
+
+Clock Relationships
+*******************
+
+Clocks                                  |    rise  to  rise   |    fall  to  fall   |    rise  to  fall   |    fall  to  rise 
+------------------------------------------------------------------------------------------------------------------------------
+Starting            Ending              |  constraint  slack  |  constraint  slack  |  constraint  slack  |  constraint  slack
+------------------------------------------------------------------------------------------------------------------------------
+TAGtranslation|clk  TAGtranslation|clk  |  0.000       0.492  |  No paths    -      |  No paths    -      |  No paths    -    
+==============================================================================================================================
+ Note: 'No paths' indicates there are no paths in the design for that pair of clock edges.
+       'Diff grp' indicates that paths exist but the starting clock and ending clock are in different clock groups.
+
+
+
+Interface Information 
+*********************
+
+		No IO constraint found 
+
+
+##### END OF TIMING REPORT #####]
+

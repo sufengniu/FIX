@@ -1,0 +1,71 @@
+#-- Synopsys, Inc.
+#-- Version E-2010.09-1
+#-- Project file I:\testing\FIX\devl\projnav\FIX\scratchproject.prs
+
+#project files
+add_file -verilog "G:/synopsys/fpga_E2010091/bin/../lib/xilinx/unisim.v"
+add_file -vhdl -lib work "I:/testing/FIX/hdl/translation.vhd"
+add_file -constraint "I:/testing/FIX/devl/projnav/FIX/TAGtranslation.sdc"
+
+
+#implementation: "FIX"
+impl -add I:\testing\FIX\devl\projnav\FIX -type fpga
+
+#
+#implementation attributes
+
+set_option -vlog_std v2001
+set_option -num_critical_paths 0
+set_option -num_startend_points 0
+
+#device options
+set_option -technology VIRTEX5
+set_option -part xc5vfx130t
+set_option -package ff1738
+set_option -speed_grade -2
+set_option -part_companion ""
+
+#compilation/mapping options
+set_option -use_fsm_explorer 0
+set_option -top_module "TAGtranslation"
+
+# mapper_options
+set_option -frequency auto
+set_option -write_verilog 0
+set_option -write_vhdl 0
+
+# Xilinx Virtex2
+set_option -run_prop_extract 1
+set_option -maxfan 100
+set_option -disable_io_insertion 0
+set_option -pipe 1
+set_option -update_models_cp 0
+set_option -retiming 0
+set_option -no_sequential_opt 0
+set_option -fixgatedclocks 3
+set_option -fixgeneratedclocks 3
+
+# Xilinx Virtex5
+set_option -enable_prepacking 1
+
+# NFilter
+set_option -popfeed 0
+set_option -constprop 0
+set_option -createhierarchy 0
+
+# sequential_optimization_options
+set_option -symbolic_fsm_compiler 1
+
+# Compiler Options
+set_option -compiler_compatible 1
+set_option -resource_sharing 1
+
+#VIF options
+set_option -write_vif 1
+
+#automatic place and route (vendor) options
+set_option -write_apr_constraint 1
+
+#set result format/file last
+project -result_file "I:/testing/FIX/devl/projnav/FIX/TAGtranslation.edn"
+impl -active "FIX"
